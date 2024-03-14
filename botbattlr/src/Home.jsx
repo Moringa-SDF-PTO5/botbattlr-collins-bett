@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import BotArmy from "./BotArmy";
 import BotCollection from "./BotCollection";
 
@@ -17,11 +17,11 @@ function Home() {
 
   const updateArmy = (armyId) => {
     setArmy((previousArmy) => {
-      const isExistBot = previousArmy.find((item) =>
+      const existingBot = previousArmy.find((item) =>
         item.id === armyId ? true : false
       ); // checks whether bot is in army
 
-      if (isExistBot) return previousArmy;
+      if (existingBot) return previousArmy;
       const selectedBot = bots.find((item) =>
         item.id === armyId ? true : false
       );
@@ -31,7 +31,6 @@ function Home() {
   };
 
   const deleteBot = (armyId, context) => {
-    console.log(armyId,context)
     function deleteFromBotArmy() {
       setArmy((previousArmy) => {
         return previousArmy.filter((item) => item.id !== armyId);

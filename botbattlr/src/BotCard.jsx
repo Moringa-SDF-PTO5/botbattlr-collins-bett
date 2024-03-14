@@ -1,13 +1,16 @@
-import React from 'react'
 import './index.css'
 
 function BotCard({img, name, botClass, health, armor, damage, deleteBot, id}) {
+  function _deleteBot (e){
+    e.stopPropagation()
+    deleteBot()
+  } 
   return (
     <div id="container">
 
     
     <div className="card">
-        <i className='bx bxs-x-circle cancel-icon' onClick={(e)=> {e.stopPropagation(); deleteBot()}}></i>
+        <i className='bx bxs-x-circle cancel-icon' onClick={_deleteBot}></i>
       <img src={img} alt="bot pic" />
 
      

@@ -1,6 +1,6 @@
-import React from 'react'
+
 import BotCard from './BotCard'
-import BotArmy from './BotArmy'
+
 
 function BotCollection({botCollectionArmy, updateTroops, removeBot}) {
     
