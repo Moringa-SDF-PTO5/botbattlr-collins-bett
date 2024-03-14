@@ -21,7 +21,13 @@ function BotArmy({ troops, removeTroop }) {
 
   return (
    
-    <div id="xyz">{soldiers}</div>
+   <div className="botarmy">
+     <h1 style={{textAlign: "center"}} className="army_heading">Your Majesty Bot Army</h1>
+      <div id="army">
+        {soldiers}
+      </div>
+   </div>
+  
   );
 }
 
